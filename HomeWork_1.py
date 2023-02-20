@@ -95,11 +95,11 @@
 3 2 1 -> no
 """
 
-n = 3
-m = 2
-k = 4
+# n = 3
+# m = 2
+# k = 4
 
-if k < n * m and ((k % n == 0) or (k % m == 0)):
-    print("----YES----")
-else:
-    print("----NO----")
+# if k < n * m and ((k % n == 0) or (k % m == 0)):
+#     print("----YES----")
+# else:
+#     print("----NO----")
