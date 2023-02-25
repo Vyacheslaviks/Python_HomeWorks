@@ -68,9 +68,9 @@
 2) 256   -->    1, 2, 4, 8, 16, 32, 64, 128, 256
 """
 
-number = int(input("Введите число: "))
-count = 0
+# number = int(input("Введите число: "))
+# count = 0
 
-while number >= 2 ** count:
-    print(2 ** count)
-    count += 1
+# while number >= 2 ** count:
+#     print(2 ** count)
+#     count += 1
