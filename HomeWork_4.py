@@ -5,34 +5,64 @@
 Затем пользователь вводит сами элементы множеств. (Попробуйте использовать множества и их пересечение)
 """
 
-# from random import randint
-import random
+# import random
 
-size_1 = int(input("Введите кол-во элементов первого множества: "))
-size_2 = int(input("Введите кол-во элементов второго множества: "))
+# size_1 = int(input("Введите кол-во элементов первого множества: "))
+# size_2 = int(input("Введите кол-во элементов второго множества: "))
 
-original_list_1 = []
-original_list_2 = []
+# original_list_1 = []
+# original_list_2 = []
 
-for i in range(size_1):
-    original_list_1.append(random.randint(0, 10))
+# for i in range(size_1):
+#     original_list_1.append(random.randint(0, 10))
 
-for i in range(size_2):
-    original_list_2.append(random.randint(0, 10))
+# for i in range(size_2):
+#     original_list_2.append(random.randint(0, 10))
 
-print("Список 1: ", original_list_1)
-print("Список 2: ", original_list_2)
+# print("Список 1: ", original_list_1)
+# print("Список 2: ", original_list_2)
 
-set_1 = set(original_list_1)
-set_2 = set(original_list_2)
+# set_1 = set(original_list_1)
+# set_2 = set(original_list_2)
 
-print("Множество 1: ", set_1)
-print("Множество 2: ", set_2)
+# print("Множество 1: ", set_1)
+# print("Множество 2: ", set_2)
 
-result_set = set_1.intersection(set_2)
+# result_set = set_1.intersection(set_2)
 
-print("Результирующее множество: ", result_set)
+# print("Результирующее множество: ", result_set)
 
-result_list = list(result_set)
-result_list.sort()
-print("Итоговый список: ", result_list)
+# result_list = list(result_set)
+# result_list.sort()
+# print("Итоговый список: ", result_list)
+
+
+"""
+В фермерском хозяйстве в Карелии выращивают чернику. Она растет на круглой грядке, 
+причем кусты высажены только по окружности. Таким образом, у каждого куста есть ровно два соседних. 
+Всего на грядке растет N кустов. Эти кусты обладают разной урожайностью, поэтому ко времени сбора 
+на них выросло различное число ягод – на i-ом кусте выросло ai ягод. В этом фермерском хозяйстве внедрена 
+система автоматического сбора черники. Эта система состоит из управляющего модуля и нескольких собирающих модулей. 
+Собирающий модуль за один заход, находясь непосредственно перед некоторым кустом, 
+собирает ягоды с этого куста и с двух соседних с ним. Напишите программу для нахождения максимального числа ягод, 
+которое может собрать за один заход собирающий модуль, находясь перед некоторым кустом заданной во входном файле грядки.
+
+Тесты:
+1) N = 9, list = [11, 14, 6, 6, 9, 10, 7, 5, 15]    -->    40
+2) N = 9, list = [5, 10, 5, 7, 9, 7, 5, 13, 15]    -->    33
+"""
+
+N = 9
+our_list = [5, 10, 5, 7, 9, 7, 5, 13, 15]
+cur_amount = our_list[N-2] + our_list[N-1] + our_list[0]
+max_amount = cur_amount
+print(cur_amount)
+
+for i in range(N-2, -1, -1):
+    cur_amount = our_list[i+1] + our_list[i] + our_list[i-1]
+    print(f"{cur_amount} = [{i+1}]: {our_list[i+1]} + [{i}]: {our_list[i]} + [{i-1}]: {our_list[i-1]}")
+
+    if cur_amount > max_amount:
+        max_amount = cur_amount
+
+print(f"Максимальное число ягод которые можно собрать с 3х грядок одновеременно - {max_amount}")            
