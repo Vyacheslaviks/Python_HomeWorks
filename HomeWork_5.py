@@ -8,37 +8,41 @@
 3) "-1-2+5-0+1"     -->     3
 """
 
-our_string = "-1-2+5-0+1"
+# our_string = "-1-2+5-0+1"
 
+# cur_value = ''
+# amount = 0
 # for i in range(len(our_string)):
-#     cur_value = ''
-#     print(our_string[i], " = ", end = '')
-#     if i == 0 and int(our_string[i]):
+#     if our_string[i] == '-' or our_string[i] == '+':
 #         cur_value = our_string[i]
+#     else:
+#         cur_value += our_string[i]
+
+#     print(cur_value)
+
+#     if cur_value != '-' and cur_value != '+':
 #         cur_value = int(cur_value)
-#     elif our_string[i] == "+" or our_string[i] == "-":
-#         cur_value = our_string[i] + our_string[i+1]
-#         cur_value = int(cur_value)
-#     elif int(our_string[i]):
-#         cur_value = our_string[i]
+#         amount += cur_value
     
-#     cur_value = int(cur_value)
-#     print(cur_value, " --> ", type(cur_value))
+# print('amount:', amount)
 
 
+"""
+Словом в данной задаче считается последовательность букв, 
+ограниченная пробелами или началом или концом строки.
+Выведите все слова из строки в столбик. 
+НЕЛЬЗЯ ПОЛЬЗОВАТЬСЯ МЕТОДАМИ СТРОК (split)
 
-cur_value = ''
-amount = 0
+Тесты:
+1) "Hello, world!"               -->     "Hello," "world!"
+2) "My heart in the Highland"   -->     "My" "heart" "in" "the" "Highland"
+"""
+
+our_string = "My heart in the Highland"
+cur_string = ''
+
 for i in range(len(our_string)):
-    if our_string[i] == '-' or our_string[i] == '+':
-        cur_value = our_string[i]
-    else:
-        cur_value += our_string[i]
-
-    print(cur_value)
-
-    if cur_value != '-' and cur_value != '+':
-        cur_value = int(cur_value)
-        amount += cur_value
-    
-print('amount:', amount)
+    cur_string += our_string[i]
+    if our_string[i] == ' ' or i == len(our_string) - 1:
+        print(cur_string)
+        cur_string = ''
