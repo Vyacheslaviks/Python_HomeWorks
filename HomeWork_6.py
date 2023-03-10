@@ -9,11 +9,37 @@
 2) 10, -4, 4    -->     10, 6, 2, -2
 """
 
-start_number = int(input("Введите первый элемент: "))
-diff = int(input("Введите разность прогрессии: "))
-quant_number = int(input("Ввидети кол-во элементов: "))
-cur_number = start_number
+# start_number = int(input("Введите первый элемент: "))
+# diff = int(input("Введите разность прогрессии: "))
+# quant_number = int(input("Ввидети кол-во элементов: "))
+# result_list = [start_number]
 
-for i in range(quant_number):
-    print(cur_number, end = '  ')
-    cur_number += diff
+# for i in range(quant_number-1):
+#     start_number += diff
+#     result_list.append(start_number)
+
+# print(result_list)
+
+
+
+"""
+Определить индексы элементов массива (списка), 
+значения которых принадлежат заданному диапазону 
+(т.е. не меньше заданного минимума и не больше заданного максимума)
+
+Тесты:
+1) диапазон: [5, 10], массив: [6, 2, -3, 8, -5, 10, 0]     -->      [0], [3], [5]
+2) диапазон: [-2, 0], массив: [6, 2, -3, 8, -5, 10, 0]     -->      [6]
+"""
+
+our_list = [6, 2, -3, 8, -5, 10, 0]
+min_range = -2
+max_range = 0
+
+memory_list = []
+
+for i in range(len(our_list)):
+    if our_list[i] >= min_range and our_list[i] <= max_range:
+        memory_list.append(i)
+
+print(f"В массиве элементы входящие в этот диапазон хранятся под индексами: {memory_list}")
